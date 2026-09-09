@@ -1,6 +1,8 @@
 
 
 <?php 
+session_start();
+if($_SESSION['user_id']){
     
     include '../dbconnect.php';
 
@@ -115,6 +117,9 @@
 
 <?php 
     include '../layouts/footer.php';
+}else{
+    header('location: ../login.php');
+}
 ?>
 
 
